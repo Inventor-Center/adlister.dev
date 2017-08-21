@@ -190,6 +190,7 @@ $(document).ready(function() {
 
       requestAnimationFrame(animate);
       c.clearRect(0, 0, innerWidth , document.documentElement.scrollHeight);
+      c.clearRect(0, 0, innerWidth , innerHeight);
 
     for (var i = 0; i < ballArray.length; i++) {
       ballArray[i].update();
