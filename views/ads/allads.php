@@ -44,8 +44,8 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">All Users Ads</h1>
-
+                <h1 class="text-center">All Ads</h1>
+                <hr>
             </div>
 
         </div>
@@ -56,7 +56,6 @@
 
         <div class="row">
 
-            <h3 class="section-title">Your Ads</h3>
             <!-- Placeholder for featured items.-->
                 <?php 
                 if(!empty($allAds)){
