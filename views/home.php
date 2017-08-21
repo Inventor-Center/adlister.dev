@@ -7,8 +7,9 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Welcome To Adlister</h1>
-
+                <h1 class="text-center">Welcome To Inventor Center!</h1>
+                <h3 class="text-center">The easiest way to sell your inventions</h3>
+                <hr>
             </div>
 
         </div>

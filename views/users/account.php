@@ -10,7 +10,7 @@
             <div class="col-xs-12">
 
                 <h1 class="text-center"><?= $_SESSION['IS_LOGGED_IN']?>'s Account</h1>
-
+                <hr>
             </div>
 
         </div>

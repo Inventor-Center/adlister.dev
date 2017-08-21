@@ -37,7 +37,7 @@ function addNewAd()
             $ad->date_create = date("Y-m-d H-i-s");
             $ad->save();
             
-            header("Location:/Ads/Show");
+            header("Location:/Ads/Show?id=$ad->id");
             var_dump($_POST);
         } else {
             echo "Title for ad already exists!!";
