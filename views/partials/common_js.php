@@ -40,8 +40,16 @@ $(document).ready(function() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   window.addEventListener("resize", function() {
+      console.log(canvas.height);
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+          
+    });
+  window.addEventListener("scroll", function() {
+      console.log(canvas.height);
+      c.clearRect(0, 0, innerWidth , document.documentElement.scrollHeight);
+      canvas.width = window.innerWidth;
+      canvas.height = document.documentElement.scrollHeight;
           
     });
 
@@ -181,6 +189,7 @@ $(document).ready(function() {
   function animate() {
 
       requestAnimationFrame(animate);
+      c.clearRect(0, 0, innerWidth , document.documentElement.scrollHeight);
       c.clearRect(0, 0, innerWidth , innerHeight);
 
     for (var i = 0; i < ballArray.length; i++) {
