@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../utils/helper_functions.php';
+require_once 'db_connect.php';
 
 function addNewUser()
 {
@@ -45,6 +46,24 @@ function addNewAd()
     }
 }
 
+function updateUser(){
+   
+    $dbc = new PDO('mysql:host=' . $_ENV['DB_HOST'] . ';dbname=' . $_ENV['DB_NAME'], $_ENV['DB_USER'], $_ENV['DB_PASS']);
+
+    // Tell PDO to throw exceptions on error
+    $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $loggedInUserId = $_SESSION['LOGGED_IN_ID'];
+    $newUsername = Input::get('editUsername');
+    $query = "UPDATE users SET username = '{$newUsername}' WHERE id = '{$loggedInUserId}'";
+    var_dump($query);
+    $firstValue = true;
+
+    $stmt = $dbc->prepare($query);
+
+    $stmt->execute();
+}
+
 function pageController()
 {
     $data = [];
@@ -52,13 +71,22 @@ function pageController()
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+   
+    if(Input::has('editUsername')){
+        updateUser();
+    }
+
     if(isset($_SESSION['IS_LOGGED_IN'])){
         $activeUser = $_SESSION['IS_LOGGED_IN'];
         $activeInfo = User::findByUsernameOrEmail($activeUser);
         $data['activeUser'] = $activeUser;
-        $data['activeInfo'] = $activeInfo;
-        
+        $data['activeInfo'] = $activeInfo;   
     }
+
+    var_dump($_SESSION);
+
+//test update
+
 
     if(Input::has('logout')){
         Auth::logout();
