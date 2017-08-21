@@ -21,9 +21,7 @@
 
             <h3 class="section-title">Your Ads</h3>
             <!-- Placeholder for featured items.-->
-                <?php 
-                if(!empty($allUsersAds)){
-                foreach($allUsersAds as $ad) : ?>
+                <?php if(!empty($allUsersAds)){ foreach($allUsersAds as $ad) : ?>
                 <div class="imgContainer">
                     <h4><?= $ad->title ?></h4>
                     <hr>

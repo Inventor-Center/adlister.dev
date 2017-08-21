@@ -44,7 +44,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">All Ads</h1>
+                <h1 class="text-center">All Inventions</h1>
                 <hr>
             </div>
 
@@ -66,7 +66,7 @@
                     <hr>
                     <img class="thumbnailImages" src=<?= $ad->img ?>>
                 
-                    <p>Description : <?= $ad->description ?></p>
+                    <p><?= $ad->description ?></p>
                     <p>Created : <?= $ad->date_create ?></p>
                     <p>Categories : <?= $ad->categories ?></p>
                     <br><br>
