@@ -143,7 +143,7 @@ abstract class Model {
      */
     protected function update()
     {
-        $query = "UPDATE " . static::$table . " SET ";
+        $query = "UPDATE " . 'ads' . " SET ";
         $firstValue = true;
 
         // Iterate through all the attributes to build the prepared query
@@ -166,6 +166,7 @@ abstract class Model {
 
         $stmt = self::$dbc->prepare($query);
 
+        var_dump($this->attributes);
         foreach ($this->attributes as $key => $value) {
             $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
