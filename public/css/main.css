@@ -1,5 +1,5 @@
 .footer {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -8,18 +8,24 @@
   text-align: center;
   color:white;
 }
+
+#footerSpacer {
+	height:5em;
+}
+
 .avery-class{
 	display:none;
 }
 
 body {
 	color: white;
+	background-color:#22313f;
 }
 canvas {
     background-color: #22313F;
     z-index: -1;
     position: absolute;
-  }
+}
 
 .ads-background{
 	border: 1px solid black;
@@ -45,6 +51,14 @@ canvas {
 	float:left;
 	text-align:center;
 	background-color:rgba(255,255,255,.15);
+}
+
+a:link,a:active,a:visited {
+	color:white;
+}
+
+a:hover{
+	color:yellow;
 }
 
 #createAdWrap {
