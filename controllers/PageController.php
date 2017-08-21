@@ -59,6 +59,12 @@ function pageController()
         $data['activeInfo'] = $activeInfo;
         
     }
+    if(isset($_GET['delete'])) {
+
+        $ad = new Ad;
+        $ad->id = Input::get('id');
+        $ad->delete();
+    }
 
     if(Input::has('logout')){
         Auth::logout();

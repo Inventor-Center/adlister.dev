@@ -18,7 +18,9 @@
 		<div class="form-group">
 			<label for="categories">Categories</label>
 			<input type="textarea" name="categories" id="categories" class="form-control" required>
-			<button class="btn" type="submit">Submit</button>
+			<button class="btn btn-success" type="submit">Submit</button>
 		</div>
 	</form>
+	<a href="Ads/Edit?delete=true"><button class="btn btn-warning" >Delete Item</button>
+		<?php var_dump($_GET) ?>
 </div>

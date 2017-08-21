@@ -33,7 +33,7 @@
                     <a href="/Ads/Edit?title=<?php 
                     $title = explode(" ", $ad->title);
                     $title = implode("_",$title);
-                    echo $title; ?>"><button class="btn-primary btn">Edit</button></a>
+                    echo $title; ?>&id=<?=$ad->id?>"><button class="btn-primary btn">Edit</button></a>
                     <br><br>
                     
                 </div>

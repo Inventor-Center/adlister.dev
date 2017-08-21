@@ -10,7 +10,7 @@
                 <div class="alert alert-danger <?php 
                 if(empty($_POST)){
                     echo "avery-class";
-                    }?>"">
+                    }?>">
                     <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
                 </div>
                 <?php unset($_SESSION['ERROR_MESSAGE']); ?>
