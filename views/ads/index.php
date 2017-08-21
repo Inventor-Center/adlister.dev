@@ -30,10 +30,7 @@
                     <p>Description : <?= $ad->description ?></p>
                     <p>Created : <?= $ad->date_create ?></p>
                     <p>Categories : <?= $ad->categories ?></p>
-                    <a href="/Ads/Edit?title=<?php 
-                    $title = explode(" ", $ad->title);
-                    $title = implode("_",$title);
-                    echo $title; ?>"><button class="btn-primary btn">Edit</button></a>
+                    <a href="/Ads/Edit?id=<?= $ad->id ?>">"><button class="btn-primary btn">Edit</button></a>
                     <br><br>
                     
                 </div>
