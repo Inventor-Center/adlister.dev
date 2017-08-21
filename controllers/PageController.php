@@ -47,8 +47,6 @@ function addNewAd()
 
 function pageController()
 {
-
-
     $data = [];
     $allUsers = User::all();
     $allAds = Ad::all();
@@ -61,13 +59,12 @@ function pageController()
         header("Location:/Users/Login");
     };
 
-
     if (isset($_SESSION['IS_LOGGED_IN']) && !empty($_POST['title'])){
-    addNewAd();
-    
+        addNewAd();
     }
+
     if (!empty($_POST['name'])){
-    addNewUser();
+        addNewUser();
     }
 
     if(isset($_POST['email_user'])){
@@ -122,7 +119,6 @@ function pageController()
             $mainView = '../views/404.php';
             break;
     }
-
 
     $data['mainView'] = $mainView;
     $data['allAds'] = $allAds;
