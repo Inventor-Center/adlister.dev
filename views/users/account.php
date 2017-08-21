@@ -19,7 +19,7 @@
 
     <section id="features">
 
-        <div>
+        <div class="col-xs-4 col-xs-offset-4 text-center">
 
             <h3 class="section-title">User Info</h3>
             	<p>Full Name: <?= $activeInfo->name; ?></P>
