@@ -19,24 +19,25 @@
 
         <div class="row">
 
-            <h3 class="section-title">Featured Items</h3>
+            <h3 class="section-title">Your Ads</h3>
             <!-- Placeholder for featured items.-->
                 <?php 
                 if(!empty($allUsersAds)){
                 foreach($allUsersAds as $ad) : ?>
-                <div>
-                    <img src=<?= $ad->img ?>>
-                    <ul class="col col-xs-4">
-                    <li><?= $ad->title ?></li>
-                    <li><?= $ad->description ?></li>
-                    <li><?= $ad->username ?></li>
-                    <li><?= $ad->date_create ?></li>
-                    <li><?= $ad->categories ?></li>
+                <div class="imgContainer">
+                    <h4><?= $ad->title ?></h4>
+                    <hr>
+                    <img class="thumbnailImages" src=<?= $ad->img ?>>
+                
+                    <p>Description : <?= $ad->description ?></p>
+                    <p>Created : <?= $ad->date_create ?></p>
+                    <p>Categories : <?= $ad->categories ?></p>
                     <a href="/Ads/Edit?title=<?php 
                     $title = explode(" ", $ad->title);
                     $title = implode("_",$title);
                     echo $title; ?>"><button class="btn-primary btn">Edit</button></a>
-                    </ul>
+                    <br><br>
+                    
                 </div>
                 <?php endforeach; } ?>
         </div>

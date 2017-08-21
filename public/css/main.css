@@ -29,6 +29,32 @@ canvas {
 	min-width: 50px; 
 }
 
+.imgContainer img {
+	max-height: 40%;
+	max-width: 90%;
+	margin-bottom:2em;
+	border-radius: .5em;
+}
+
+.imgContainer {
+	width:29%;
+	margin-left: 2%;
+	margin-right: 2%;
+	border:1px solid black;
+	border-radius: 1em;
+	float:left;
+	text-align:center;
+	background-color:rgba(255,255,255,.15);
+}
+
+#createAdWrap {
+	text-align: center;
+}
+
+hr {
+	margin-top:0;
+	color:black;
+}
 
 h1 {
 	text-align: center;
