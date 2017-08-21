@@ -54,6 +54,8 @@ function pageController()
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $activeUser = $_SESSION['IS_LOGGED_IN'];
+    $activeInfo = User::findByUsernameOrEmail($activeUser);
 
     if(Input::has('logout')){
         Auth::logout();
@@ -127,6 +129,8 @@ function pageController()
     $data['mainView'] = $mainView;
     $data['allAds'] = $allAds;
     $data['allUsersAds'] = $allUsersAds;
+    $data['activeUser'] = $activeUser;
+    $data['activeInfo'] = $activeInfo;
     return $data;
     var_dump($_SESSION);
 }
