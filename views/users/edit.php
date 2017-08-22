@@ -24,6 +24,7 @@
                 <?php 
                 //user info update
                     if(!empty($_POST)){
+                        $currentUserInfo = User::find($_SESSION['LOGGED_IN_ID']);
                         $newUserInfo = new User();
                         $newUserInfo->id = $currentUserInfo->id;
                         $newUserInfo->name = Input::get('newName');
