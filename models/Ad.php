@@ -57,7 +57,7 @@ class Ad extends Model {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // turn each associative array into an instance of the model subclass
-      
+    }
     public static function filterByCategory($category)
     {
         self::dbConnect();

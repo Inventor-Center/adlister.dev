@@ -36,6 +36,9 @@ canvas {
     z-index: -1;
     position: absolute;
 }
+select {
+	color: black;
+}
 
 .ads-background{
 	border: 1px solid black;

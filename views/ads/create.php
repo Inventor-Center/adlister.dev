@@ -21,11 +21,15 @@
 				<input type="text" name="img" id="img" class="form-control"><br>
 				<a id="filestackButton" class="btn btn-secondary">Use Filestack Image Hosting</a>
 			</div>
-			<div class="form-group">
-				<label for="categories">Categories</label>
-				<input type="textarea" name="categories" id="categories" class="form-control" required>
+				<label for"categories">Category</label>
+  				<select name="categories">
+    				<option name="categories" value="Entertainment">Entertainment</option>
+    				<option name="categories" value="Technology">Technology</option>
+    				<option name="categories" value="Science">Science</option>
+    				<option name="categories" value="Fitness">Fitness</option>
+    				<option name="categories" value="Miscellaneous">Miscellaneous</option>
+  				</select>
 				<button class="btn btn-primary" type="submit">Submit</button>
-			</div>
 		</form>
 	</div>
 </div>
