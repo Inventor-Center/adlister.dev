@@ -17,6 +17,11 @@
 	display:none;
 }
 
+.thumbnailImagesMini{
+	width:2em;
+	height:2em;
+}
+
 body {
 	color: white;
 	background-color:#22313f;

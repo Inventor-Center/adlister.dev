@@ -17,8 +17,12 @@ $(document).ready(function() {
     }).then(function(result){
       console.log(JSON.stringify(result.filesUploaded[0].url));
       var $imageUrl = JSON.stringify(result.filesUploaded[0].url);
-      console.log($imageUrl);
-    $('#img').val($imageUrl);  
+      var $imageUrl2 = JSON.stringify(result.filesUploaded[1].url);
+      var $imageUrl3 = JSON.stringify(result.filesUploaded[2].url);
+      var $imageUrl4 = JSON.stringify(result.filesUploaded[3].url);
+      var $imageUrl5 = JSON.stringify(result.filesUploaded[4].url);
+    $('#img').val($imageUrl+","+$imageUrl2+","+$imageUrl3+","+$imageUrl4+","+$imageUrl5);
+ 
   });
 })
 

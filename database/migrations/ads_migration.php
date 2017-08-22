@@ -11,7 +11,7 @@ $query = 'CREATE TABLE ads (
     description VARCHAR(240) NOT NULL,
     username VARCHAR(100) NOT NULL,
     date_create DATETIME NOT NULL,
-    img VARCHAR (100),
+    img VARCHAR (255),
     categories VARCHAR (250),
     PRIMARY KEY (id)
 )';
