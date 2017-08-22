@@ -33,13 +33,11 @@ class User extends Model {
         $stmt->execute();
 
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
-
         $instance = null;
         if ($results) {
             $instance = new static;
             $instance->attributes = $results;
         }
-
         return $instance;
     }
 

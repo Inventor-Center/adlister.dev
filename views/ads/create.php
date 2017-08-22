@@ -13,6 +13,10 @@
 				<input type="text" name="description" id="description" class="form-control" required>
 			</div>
 			<div class="form-group">
+				<label for="price">Price Per Unit</label>
+				<input type="text" name="price" id="price" class="form-control" required>
+			</div>
+			<div class="form-group">
 				<label for="img">Image Hosting Filestack</label>
 				<input type="text" name="img" id="img" class="form-control"><br>
 				<a id="filestackButton" class="btn btn-secondary">Use Filestack Image Hosting</a>

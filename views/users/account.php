@@ -1,8 +1,6 @@
 <!--Page for user account home--><?php
 if(isset($_SESSION['IS_LOGGED_IN'])){
         $activeUser = User::find($_SESSION['LOGGED_IN_ID']);
-        var_dump($activeUser->name);
-             
         }
     ?>
 
@@ -13,7 +11,7 @@ if(isset($_SESSION['IS_LOGGED_IN'])){
         <div class="row">
 
             <div class="col-xs-12">
-                <h1 class="text-center"><?= $_SESSION['IS_LOGGED_IN']?>'s Account</h1>
+                <h1 class="text-center"><?= $activeUser->name ?>'s Account</h1>
                 <hr>
             </div>
 
