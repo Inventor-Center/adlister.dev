@@ -70,7 +70,7 @@ function pageController()
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-  
+
    
     if(Input::has('editUsername')){
         updateUser();
