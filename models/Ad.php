@@ -42,4 +42,36 @@ class Ad extends Model {
 
         return $instance;
     }
+
+    public static function filterByCategory($category)
+    {
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ads WHERE categories like :category';
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':category', $category, PDO::PARAM_STR);
+        
+        $stmt->execute();
+
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return array_map(function($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
