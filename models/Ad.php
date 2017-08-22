@@ -65,7 +65,7 @@ class Ad extends Model {
         return $instance;
         // turn each associative array into an instance of the model subclass
     }
-      
+
     public static function filterByCategory($category)
     {
         self::dbConnect();
