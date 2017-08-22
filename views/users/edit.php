@@ -21,18 +21,35 @@
                     </div>
                     <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
                 <?php endif; ?>
+                <?php 
+                //user info update
+                    if(!empty($_POST)){
+                        $newUserInfo = new User();
+                        $newUserInfo->id = $currentUserInfo->id;
+                        $newUserInfo->name = Input::get('newName');
+                        $newUserInfo->email = Input::get('newEmail');
+                        $newUserInfo->username = Input::get('newUsername');
+                        $newUserInfo->password = $currentUserInfo->password;
+                        $newUserInfo->updateUser();
+
+                    };
+
+                ?>
 
                 <form method="POST" action="" data-validation data-required-message="This field is required">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= $user->name; ?>" data-required>
+                        <input type="text" class="form-control" id="name" name="newName" placeholder="Full Name" value="" data-required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?= $user->email; ?>" data-required>
+                        <input type="text" class="form-control" id="email" name="newEmail" placeholder="Email" value="" data-required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $user->username; ?>" data-required>
+                        <input type="text" class="form-control" id="username" name="newUsername" placeholder="Username" value="" data-required>
                     </div>
+                    
+
+
                     <button type="submit" class="btn btn-primary">Update Account</button>
 
                 </form>

@@ -39,7 +39,6 @@ function addNewAd()
             $ad->save();
             
             header("Location:/Ads/Show?id=$ad->id");
-            var_dump($_POST);
         } else {
             echo "Title for ad already exists!!";
         }
@@ -71,6 +70,7 @@ function pageController()
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $currentUserInfo = User::find($_SESSION['LOGGED_IN_ID']);
    
     if(Input::has('editUsername')){
         updateUser();
@@ -82,8 +82,6 @@ function pageController()
         $data['activeUser'] = $activeUser;
         $data['activeInfo'] = $activeInfo;   
     }
-
-    var_dump($_SESSION);
 
 //test update
 

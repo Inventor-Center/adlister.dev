@@ -143,7 +143,7 @@ abstract class Model {
      */
     protected function update()
     {
-        $query = "UPDATE " . 'ads' . " SET ";
+        $query = "UPDATE " . static::$table . " SET ";
         $firstValue = true;
 
         // Iterate through all the attributes to build the prepared query

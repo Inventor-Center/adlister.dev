@@ -26,10 +26,7 @@
             	<p>User Name: <?= $activeInfo->username; ?></p>
 
             <!-- <button class="btn"><a href="Users/Edit?username=<?= $_SESSION['IS_LOGGED_IN']?>">Edit Information</button> -->
-            <form>
-                <input name="editUsername" placeholder="New Username Here"><br>
-                <button class="btn btn-primary" type="submit">Submit Changes</button>
-            </form>
+            <a href="/Users/Edit" class="btn btn-success">Go To Edit User Page</a>
 
 
         </div>

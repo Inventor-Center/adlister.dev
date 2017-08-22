@@ -43,6 +43,10 @@ class User extends Model {
         return $instance;
     }
 
+    public function updateUser(){
+        $this->update();
+    }
+
 
     //new function for identifying certain individual users ads
     public static function usersAds()

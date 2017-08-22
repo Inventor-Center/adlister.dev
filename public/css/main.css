@@ -42,6 +42,11 @@ canvas {
 	border-radius: .5em;
 }
 
+#singleAdCentering {
+	display:flex;
+	justify-content:center;
+}
+
 .imgContainer {
 	width:29%;
 	margin-left: 2.1%;
