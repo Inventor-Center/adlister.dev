@@ -36,6 +36,8 @@
                         $newUserInfo->updateUser();
 
                     };
+                        // Auth::logout();
+                        // header('Location:/Users/Login');
 
                 ?>
 
