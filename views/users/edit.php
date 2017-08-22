@@ -23,6 +23,8 @@
                 <?php endif; ?>
                 <?php 
                 //user info update
+
+                  $currentUserInfo = User::find($_SESSION['LOGGED_IN_ID']);
                     if(!empty($_POST)){
                         $currentUserInfo = User::find($_SESSION['LOGGED_IN_ID']);
                         $newUserInfo = new User();
@@ -34,6 +36,8 @@
                         $newUserInfo->updateUser();
 
                     };
+                        // Auth::logout();
+                        // header('Location:/Users/Login');
 
                 ?>
 

@@ -70,9 +70,7 @@ function pageController()
     $allAds = Ad::all();
     $allUsersAds = User::usersAds();
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    if(isset($_SESSION['IS_LOGGED_IN'])){
-    $currentUserInfo = User::find($_SESSION['LOGGED_IN_ID']);
-    }
+
    
     if(Input::has('editUsername')){
         updateUser();
@@ -90,6 +88,8 @@ function pageController()
         $ad->id = Input::get('id');
         $ad->delete();
     }
+
+    
 
 //test update
 
