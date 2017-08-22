@@ -8,7 +8,6 @@
         <div class="row">
 
             <div class="col-xs-12">
-
                 <h1 class="text-center"><?= $_SESSION['IS_LOGGED_IN']?>'s Account</h1>
                 <hr>
             </div>
@@ -26,9 +25,10 @@
             	<p>Email: <?= $activeInfo->email; ?></p>
             	<p>User Name: <?= $activeInfo->username; ?></p>
 
-           <a href="Users/Edit?username=<?= $_SESSION['IS_LOGGED_IN']?>"><button class="btn">Edit Information</button>
 
-            <!-- Placeholder for featured items.-->
+            <!-- <button class="btn"><a href="Users/Edit?username=<?= $_SESSION['IS_LOGGED_IN']?>">Edit Information</button> -->
+            <a href="/Users/Edit" class="btn btn-success">Go To Edit User Page</a>
+
 
         </div>
 

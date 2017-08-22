@@ -166,6 +166,7 @@ abstract class Model {
 
         $stmt = self::$dbc->prepare($query);
 
+        var_dump($this->attributes);
         foreach ($this->attributes as $key => $value) {
             $stmt->bindValue(':' . $key, $value, PDO::PARAM_STR);
         }
