@@ -82,6 +82,12 @@ function pageController()
         $data['activeUser'] = $activeUser;
         $data['activeInfo'] = $activeInfo;   
     }
+    if(isset($_GET['delete'])) {
+
+        $ad = new Ad;
+        $ad->id = Input::get('id');
+        $ad->delete();
+    }
 
 //test update
 

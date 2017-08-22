@@ -98,14 +98,18 @@
                     <?php }else { ?>
 		<div class="form-group">
 			<label for="categories">Categories</label>
+
 			<input type="textarea" name="categories" id="categories" class="form-control" required value = "<?= $currentAd['categories'] ?>"> 
+
 		</div>
 		<?php } ?>
 		</div> 
 	</form>
+
                     <li><?= $currentAd['date_create'] ?></li>
                     </ul>
                     <form method="POST"> 
 			<button class="btn" type="submit" name="guesswhat">Submit</button>
 			</form>
+
 </div>

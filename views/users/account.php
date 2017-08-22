@@ -25,6 +25,7 @@
             	<p>Email: <?= $activeInfo->email; ?></p>
             	<p>User Name: <?= $activeInfo->username; ?></p>
 
+
             <!-- <button class="btn"><a href="Users/Edit?username=<?= $_SESSION['IS_LOGGED_IN']?>">Edit Information</button> -->
             <a href="/Users/Edit" class="btn btn-success">Go To Edit User Page</a>
 
