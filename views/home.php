@@ -8,7 +8,7 @@
             <div class="col-xs-12">
 
                 <h1 class="text-center">Welcome To Inventor Center!</h1>
-                <h3 class="text-center">The easiest way to sell your inventions</h3>
+                <h4 class="text-center">The easiest way to sell your inventions online</h4>
                 <hr>
             </div>
 
@@ -20,26 +20,24 @@
 
         <div class="row">
 
-            <?php foreach($allAds as $ad) : ?>
-                <?php $imgArray = explode(",",$ad->img); ?>
-                <a href="/Ads/Show?id=<?= $ad->id ?>">
-                <div class="imgContainer">
-                    <h4><?= $ad->title ?></h4>
-                    <hr>
-                    <img class="thumbnailImages" src=<?= $imgArray[0]; ?>><br>
-                    <img class="thumbnailImagesMini" src=<?php if(!empty($imgArray[1])){echo $imgArray[1];}; ?>>
-                    <img class="thumbnailImagesMini" src=<?php if(!empty($imgArray[2])){echo $imgArray[2];}; ?>>
-                    <img class="thumbnailImagesMini" src=<?php if(!empty($imgArray[3])){echo $imgArray[3];}; ?>>
-                    <img class="thumbnailImagesMini" src=<?php if(!empty($imgArray[4])){echo $imgArray[4];}; ?>>
-                
-                    <p><?= $ad->description ?></p>
-                    <p>Created : <?= $ad->date_create ?></p>
-                    <p>Categories : <?= $ad->categories ?></p>
-                    <br><br>
-                    
-                </div>
-                </a>
+            <h1>About Us Here</h1>
+
+            <h2>Top 5 Ads Here</h2>
+            <table>
+                <tr>
+                    <th>Title</th><th>Description</th><th>Price</th>
+                </tr>
+               
+            
+                <?php $topFiveAds = Ad::topFiveAds(); var_dump($topFiveAds[0]); foreach($topFiveAds as $ad) : ?>
+
+                    <a href="/Ads/Show?id=<?= $ad->id ?>">
+                        <tr>
+                            <td><?= $ad->title ?></td><td><?= $ad->description ?></td><td><?= $ad->price ?></td>
+                        </tr>
+                    </a>
                 <?php endforeach; ?>
+            </table>
 
                
         </div>
