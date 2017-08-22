@@ -69,6 +69,7 @@ function pageController()
     $data = [];
     $allUsers = User::all();
     $allUsersAds = User::usersAds();
+
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     if (isset($_GET['category'])){
@@ -160,6 +161,9 @@ function pageController()
         break;
         case '/Ads/Show':
             $mainView = '../views/ads/show.php';
+            $adId = Input::get('id');
+            $ad = Ad::find($adId);
+            $ad->clickCounter();
         break;
         // TODO: put routes here
         default:    // displays 404 if route not specified above
