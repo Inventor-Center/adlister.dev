@@ -48,7 +48,7 @@ class Ad extends Model {
     {
         self::dbConnect();
 
-        $query = 'SELECT * FROM ' . static::$table . ' ORDER BY click_count DESC LIMIT 5';
+        $query = 'SELECT * FROM ads ORDER BY click_count DESC LIMIT 5';
 
         $stmt = self::$dbc->prepare($query);
         $stmt->execute();
@@ -56,8 +56,16 @@ class Ad extends Model {
         //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        $instance = null;
+        if ($results) {
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+
+        return $instance;
         // turn each associative array into an instance of the model subclass
     }
+
     public static function filterByCategory($category)
     {
         self::dbConnect();
@@ -76,6 +84,15 @@ class Ad extends Model {
             $instance->attributes = $result;
             return $instance;
         }, $results);
+    }
+
+    public function clickCounter()
+    {
+        $query = 'UPDATE ads SET click_count = :click_count WHERE id = :id';
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':click_count', $this->click_count + 1, PDO::PARAM_INT);
+        $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 
 }
