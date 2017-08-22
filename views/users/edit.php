@@ -23,6 +23,8 @@
                 <?php endif; ?>
                 <?php 
                 //user info update
+
+                  $currentUserInfo = User::find($_SESSION['LOGGED_IN_ID']);
                     if(!empty($_POST)){
                         $newUserInfo = new User();
                         $newUserInfo->id = $currentUserInfo->id;

@@ -1,5 +1,11 @@
-<!--Page for user account home-->
-
+<!--Page for user account home--><?php
+if(isset($_SESSION['IS_LOGGED_IN'])){
+        $activeUser = $_SESSION['IS_LOGGED_IN'];
+        $activeInfo = User::findByUsernameOrEmail($activeUser);
+        $data['activeUser'] = $activeUser;
+        $data['activeInfo'] = $activeInfo;   
+    }
+    ?>
 
 <div class="container">
 
