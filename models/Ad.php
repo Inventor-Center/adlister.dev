@@ -56,13 +56,12 @@ class Ad extends Model {
         //Store the resultset in a variable named $result
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $instance = null;
-        if ($results) {
+        return array_map(function($result) {
             $instance = new static;
-            $instance->attributes = $results;
-        }
-
-        return $instance;
+            $instance->attributes = $result;
+            return $instance;
+        }, $results);
+        
         // turn each associative array into an instance of the model subclass
     }
 

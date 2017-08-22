@@ -22,20 +22,21 @@
 
             <h1>About Us Here</h1>
 
-            <h2>Top 5 Ads Here</h2>
-            <table>
+            <h2><em>Top 5 Inventions</em></h2>
+            <table class="table">
                 <tr>
                     <th>Title</th><th>Description</th><th>Price</th>
                 </tr>
                
             
-                <?php $topFiveAds = Ad::topFiveAds(); var_dump($topFiveAds[0]); foreach($topFiveAds as $ad) : ?>
-
-                    <a href="/Ads/Show?id=<?= $ad->id ?>">
-                        <tr>
-                            <td><?= $ad->title ?></td><td><?= $ad->description ?></td><td><?= $ad->price ?></td>
-                        </tr>
-                    </a>
+                <?php $topFiveAds = Ad::topFiveAds(); foreach($topFiveAds as $ad) : ?>
+                    <tr>
+                        
+                            <td><a href="/Ads/Show?id=<?= $ad->id ?>"><?= $ad->title ?></a></td>
+                            <td><a href="/Ads/Show?id=<?= $ad->id ?>"><?= $ad->description ?></a></td>
+                            <td><a href="/Ads/Show?id=<?= $ad->id ?>">$ <?= $ad->price ?></a></td>
+                        
+                    </tr>
                 <?php endforeach; ?>
             </table>
 
