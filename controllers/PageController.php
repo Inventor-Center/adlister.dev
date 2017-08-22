@@ -39,7 +39,6 @@ function addNewAd()
             $ad->save();
             
             header("Location:/Ads/Show?id=$ad->id");
-            var_dump($_POST);
         } else {
             echo "Title for ad already exists!!";
         }
@@ -82,8 +81,6 @@ function pageController()
         $data['activeUser'] = $activeUser;
         $data['activeInfo'] = $activeInfo;   
     }
-
-    var_dump($_SESSION);
 
 //test update
 
