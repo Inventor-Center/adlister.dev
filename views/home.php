@@ -21,8 +21,7 @@
         <div class="row">
 
             <?php foreach($allAds as $ad) : ?>
-                <?php $imgArray = explode(",",$ad->img);
-                var_dump($imgArray); ?>
+                <?php $imgArray = explode(",",$ad->img); ?>
                 <a href="/Ads/Show?id=<?= $ad->id ?>">
                 <div class="imgContainer">
                     <h4><?= $ad->title ?></h4>

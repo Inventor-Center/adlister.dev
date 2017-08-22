@@ -13,7 +13,6 @@ function addNewUser()
             $user->password = Input::get('password');
             $user->email = Input::get('email');
             $user->username = Input::get('username');
-            
             $user->save();
             
             header("Location:/Users/Login");
@@ -36,6 +35,8 @@ function addNewAd()
             $ad->categories = Input::get('categories');
             $ad->username = $_SESSION['IS_LOGGED_IN'];
             $ad->date_create = date("Y-m-d H-i-s");
+            $ad->click_count = 0;
+            $ad->price = Input::get('price');
             $ad->save();
             
             header("Location:/Ads/Show?id=$ad->id");

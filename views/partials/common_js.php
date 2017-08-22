@@ -12,17 +12,17 @@ $(document).ready(function() {
  $('#filestackButton').click(function(){
     client.pick({
       accept: 'image/*',
-      maxFiles: 5,
+      maxFiles: 4,
       imageMax: [1024, 1024]
     }).then(function(result){
-      console.log(JSON.stringify(result.filesUploaded[0].url));
+      
       var $imageUrl = JSON.stringify(result.filesUploaded[0].url);
+      console.log($imageUrl);
       var $imageUrl2 = JSON.stringify(result.filesUploaded[1].url);
       var $imageUrl3 = JSON.stringify(result.filesUploaded[2].url);
       var $imageUrl4 = JSON.stringify(result.filesUploaded[3].url);
-      var $imageUrl5 = JSON.stringify(result.filesUploaded[4].url);
-    $('#img').val($imageUrl+","+$imageUrl2+","+$imageUrl3+","+$imageUrl4+","+$imageUrl5);
- 
+    $('#img').val($imageUrl+","+$imageUrl2+","+$imageUrl3+","+$imageUrl4);
+      // +","+$imageUrl2+","+$imageUrl3+","+$imageUrl4);
   });
 })
 

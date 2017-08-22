@@ -17,6 +17,11 @@
 	display:none;
 }
 
+.thumbnailImages{
+	max-width:90%;
+	max-height: 10em;
+}
+
 .thumbnailImagesMini{
 	width:2em;
 	height:2em;
@@ -52,6 +57,14 @@ canvas {
 	justify-content:center;
 }
 
+.imgContainerShow img {
+	max-height: 40%;
+	width: 25%;
+	margin-bottom:2em;
+	border-radius: .5em;
+	float:left;
+}
+
 .imgContainer {
 	width:29%;
 	margin-left: 2.1%;
@@ -62,6 +75,18 @@ canvas {
 	text-align:center;
 	background-color:rgba(255,255,255,.15);
 	height:36em;
+	margin-bottom:1em;
+	padding-left: .6em;
+	padding-right:.6em;
+}
+
+.imgContainerShow {
+	width:80%;
+	border:1px solid black;
+	border-radius: 1em;
+	text-align:center;
+	background-color:rgba(255,255,255,.15);
+	height:50em;
 	margin-bottom:1em;
 	padding-left: .6em;
 	padding-right:.6em;
