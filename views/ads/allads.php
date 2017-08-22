@@ -45,3 +45,19 @@
     </section>
 
 </div>
+<div>
+    <form>
+        <button name="category" value="Entertainment" class="form-control" >Entertainment</button>
+        <button name="category" value="Technology" class="form-control">Technology</button>
+        <button name="category" value="Science" class="form-control">Science</button>
+        <button name="category" value="Fitness" class="form-control">Fitness</button>
+        <button name="category" value="miscellaneous" class="form-control">miscellaneous</button>
+    </form>
+
+
+
+
+
+
+
+

@@ -68,9 +68,16 @@ function pageController()
 {
     $data = [];
     $allUsers = User::all();
-    $allAds = Ad::all();
     $allUsersAds = User::usersAds();
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+    if (isset($_GET['category'])){
+        $category = Input::get('category');
+        var_dump($category);
+        $allAds = Ad::filterByCategory($category);
+    } else {
+        $allAds = Ad::all();
+    }
 
    
     if(Input::has('editUsername')){
