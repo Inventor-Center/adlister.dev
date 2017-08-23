@@ -19,7 +19,12 @@
 
 .thumbnailImages{
 	max-width:90%;
-	max-height: 10em;
+	max-height: 25em;
+}
+
+.thumbnailImages2{
+	max-width:90%;
+	max-height: 25em;
 }
 
 .thumbnailImagesMini{
@@ -49,7 +54,7 @@ select {
 }
 
 .imgContainer img {
-	max-height: 12em;
+	max-height: 15em;
 	max-width: 90%;
 	margin-bottom:2em;
 	border-radius: .5em;
@@ -59,20 +64,23 @@ select {
 	margin-top:5%;
 }
 
+#topP{
+	margin-top:5em;
+}
 #singleAdCentering {
 	display:flex;
 	justify-content:center;
 }
 
 .imgContainerShow img {
-	max-height: 10em;
+	max-height: 20em;
 	max-width: 25%;
 	margin-bottom:2em;
 	border-radius: .5em;
 	float:left;
 }
-tDivider1{width:48%;float:left;}
-tDivider2{width:48%;float:left;}
+tDivider1{min-width:60%;float:left;}
+tDivider2{padding-top:5em;min-width:40%;}
 
 .imgContainer {
 	width:48%;
@@ -83,10 +91,12 @@ tDivider2{width:48%;float:left;}
 	float:left;
 	text-align:center;
 	background-color:rgba(255,255,255,.15);
-	height:29em;
+	height:21em;
 	margin-bottom:1em;
 	padding-left: .6em;
 	padding-right:.6em;
+	display:flex;
+	justify-content: center;
 }
 
 .imgContainerShow {
@@ -95,7 +105,7 @@ tDivider2{width:48%;float:left;}
 	border-radius: 1em;
 	text-align:center;
 	background-color:rgba(255,255,255,.15);
-	height:50em;
+	/*height:40em;*/
 	margin-bottom:1em;
 	padding-left: .6em;
 	padding-right:.6em;

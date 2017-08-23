@@ -21,6 +21,7 @@
         <div class="row">
 
             <h1>About Us Here</h1>
+            <h4 style="text-align:center">Imagine that there is a bunch of cool info about our company here!!!</h4>
 
             <h2><em>Top 5 Inventions</em></h2>
             <table class="table">

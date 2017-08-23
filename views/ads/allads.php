@@ -38,7 +38,7 @@
                     <img class="thumbnailImagesMini" src=<?php if(!empty($imgArray[3])){echo $imgArray[3];}; ?>>
                 </div>
                 <div id="tDivider2">
-                    <p><?= $ad->description ?></p>
+                    <p id="topP"><?= $ad->description ?></p>
                     <p>Created : <?= $ad->date_create ?></p>
                     <p>Categories : <?= $ad->categories ?></p>
                     <br><br>
