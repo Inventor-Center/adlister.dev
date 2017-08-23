@@ -29,7 +29,9 @@ function addNewAd()
 
         if(Ad::findByTitle(Input::get('title'))== null){
             $ad = new Ad();
+            if(is_string(Input::get('title'))){
             $ad->title = Input::get('title');
+            }
             $ad->description = Input::get('description');
             $ad->img = Input::get('img');
             $ad->categories = Input::get('categories');
@@ -37,6 +39,7 @@ function addNewAd()
             $ad->date_create = date("Y-m-d H-i-s");
             $ad->click_count = 0;
             $ad->price = Input::get('price');
+            var_dump($ad);
             $ad->save();
             
             header("Location:/Ads/Show?id=$ad->id");
@@ -90,10 +93,14 @@ function pageController()
         $data['activeInfo'] = $activeInfo;   
     }
 
-    if(isset($_GET['delete'])) {
+    if(isset($_POST['delete'])) {
         $ad = new Ad;
         $ad->id = Input::get('id');
+        $currentAd = MODEL::findAdById((int)$_GET['id']);
+        if($currentAd['username'] == $_SESSION['IS_LOGGED_IN']){
         $ad->delete();
+        header("Location:/Ads");
+        }
     }
 
     if(Input::has('logout')){

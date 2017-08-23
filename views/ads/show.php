@@ -16,8 +16,12 @@
             <img class="thumbnailImages" src=<?php if(!empty($imgArray[3])){echo $imgArray[3];}; ?>>
 			<div>
             </div><br>
-			
-			<!-- <a href="/Ads/Edit?id=<?= $ad->id ?>">"><button class="btn-primary btn">Edit</button></a> -->
+			<?php if($currentAd['username'] == $_SESSION['IS_LOGGED_IN']): ?>
+			<a href="/Ads/Edit?id=<?=$_GET['id']?>"><button class="btn-primary btn">Edit</button></a>
+			 <form method="POST"> 
+				<button class="btn" type="submit" name="delete">DELETE</button>
+			</form>
+			<?php endif; ?>
 			<br><br>
 		</div>
 
