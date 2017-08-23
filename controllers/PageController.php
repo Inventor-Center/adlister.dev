@@ -93,10 +93,14 @@ function pageController()
         $data['activeInfo'] = $activeInfo;   
     }
 
-    if(isset($_GET['delete'])) {
+    if(isset($_POST['delete'])) {
         $ad = new Ad;
         $ad->id = Input::get('id');
+        $currentAd = MODEL::findAdById((int)$_GET['id']);
+        if($currentAd['username'] == $_SESSION['IS_LOGGED_IN']){
         $ad->delete();
+        header("Location:/Ads");
+        }
     }
 
     if(Input::has('logout')){

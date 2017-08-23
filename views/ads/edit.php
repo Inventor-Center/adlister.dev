@@ -131,8 +131,9 @@
 
                     <li><?= $currentAd['date_create'] ?></li>
                     </ul>
-                    <form method="POST"> 
-			<button class="btn" type="submit" name="guesswhat">Submit</button>
+            <form method="POST"> 
+				<button class="btn" type="submit" name="guesswhat">Submit</button>
 			</form>
+			
 
 </div>

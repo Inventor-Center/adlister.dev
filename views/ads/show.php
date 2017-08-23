@@ -18,6 +18,9 @@
             </div><br>
 			<?php if($currentAd['username'] == $_SESSION['IS_LOGGED_IN']): ?>
 			<a href="/Ads/Edit?id=<?=$_GET['id']?>"><button class="btn-primary btn">Edit</button></a>
+			 <form method="POST"> 
+				<button class="btn" type="submit" name="delete">DELETE</button>
+			</form>
 			<?php endif; ?>
 			<br><br>
 		</div>
