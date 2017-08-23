@@ -94,4 +94,9 @@ class Ad extends Model {
         $stmt->execute();
     }
 
+    public function updateAd()
+    {
+        $this->update();
+    }
+
 }
