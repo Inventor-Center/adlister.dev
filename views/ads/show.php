@@ -9,13 +9,13 @@
 			<p>Description : <?= $currentAd['description'] ?></p>
 			<p>Created : <?= $currentAd['date_create'] ?></p>
 			<p>Categories :<?= $currentAd['categories'] ?></p>
-			
-			<img class="thumbnailImages" src=<?= $imgArray[0]; ?>>
-            <img class="thumbnailImages" src=<?php if(!empty($imgArray[1])){echo $imgArray[1];}; ?>>
-            <img class="thumbnailImages" src=<?php if(!empty($imgArray[2])){echo $imgArray[2];}; ?>>
-            <img class="thumbnailImages" src=<?php if(!empty($imgArray[3])){echo $imgArray[3];}; ?>>
 			<div>
-            </div><br>
+				<img class="thumbnailImages2" src=<?= $imgArray[0]; ?>>
+	            <img class="thumbnailImages2" src=<?php if(!empty($imgArray[1])){echo $imgArray[1];}; ?>>
+	            <img class="thumbnailImages2" src=<?php if(!empty($imgArray[2])){echo $imgArray[2];}; ?>>
+	            <img class="thumbnailImages2" src=<?php if(!empty($imgArray[3])){echo $imgArray[3];}; ?>>
+			
+            </div><br><br>
 			<?php if($currentAd['username'] == $_SESSION['IS_LOGGED_IN']): ?>
 			<a href="/Ads/Edit?id=<?=$_GET['id']?>"><button class="btn-primary btn">Edit</button></a>
 			 <form method="POST"> 
