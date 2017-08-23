@@ -160,7 +160,7 @@ function pageController()
             $mainView = '../views/ads/create.php';
         break;
         case '/Ads/Edit':
-            $mainView = '../views/ads/edit.php';
+            $mainView = '../views/ads/editAd.php';
         break;
         case '/Ads/Show':
             $mainView = '../views/ads/show.php';
