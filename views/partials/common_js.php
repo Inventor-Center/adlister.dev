@@ -17,15 +17,17 @@ $(document).ready(function() {
     }).then(function(result){
       
       var $imageUrl = JSON.stringify(result.filesUploaded[0].url);
-      // var $imageUrl2 = JSON.stringify(result.filesUploaded[1].url);
-      // var $imageUrl3 = JSON.stringify(result.filesUploaded[2].url);
-      // var $imageUrl4 = JSON.stringify(result.filesUploaded[3].url);
+      var $imageUrl2 = JSON.stringify(result.filesUploaded[1].url);
+      var $imageUrl3 = JSON.stringify(result.filesUploaded[2].url);
+      var $imageUrl4 = JSON.stringify(result.filesUploaded[3].url);
 
       console.log(JSON.stringify(result));
 
     $('#img').val($imageUrl+","+$imageUrl2+","+$imageUrl3+","+$imageUrl4);
   });
 })
+
+ 
 
 
   var canvas = document.querySelector("canvas");

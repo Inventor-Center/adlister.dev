@@ -2,7 +2,7 @@
 
     <section id="login">
 
-        <div class="row">
+        <div class="row" id="signupSpacer">
 
             <h1 class="section-title">Signup For Inventor Center</h1>
 
@@ -31,7 +31,7 @@
                         <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" data-required>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
