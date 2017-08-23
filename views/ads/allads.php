@@ -20,7 +20,17 @@
 
         <div class="row">
 
-            <!-- Placeholder for featured items.-->
+            <div class="col col-sm-2">
+                <form>
+                    <button id="entBut" class="categoryButtons form-control"><a href="/AllAds">All Ads</a></button>
+                    <button name="category" value="Entertainment" class="categoryButtons form-control" >Entertainment</button>
+                    <button name="category" value="Technology" id="" class="categoryButtons form-control">Technology</button>
+                    <button name="category" value="Science" id="" class="categoryButtons form-control">Science</button>
+                    <button name="category" value="Fitness" id="" class="categoryButtons form-control">Fitness</button>
+                    <button name="category" value="miscellaneous" id="" class="categoryButtons form-control">miscellaneous</button>
+                </form>
+            </div>
+            <div class="col col-sm-10">
                 <?php foreach($allAds as $ad) : ?>
                 <?php $imgArray = explode(",",$ad->img); ?>
                 <a href="/Ads/Show?id=<?= $ad->id ?>">
@@ -40,19 +50,14 @@
                 </div>
                 </a>
                 <?php endforeach; ?>
+            </div>
         </div>
 
     </section>
 
 </div>
 <div>
-    <form>
-        <button name="category" value="Entertainment" class="form-control" >Entertainment</button>
-        <button name="category" value="Technology" class="form-control">Technology</button>
-        <button name="category" value="Science" class="form-control">Science</button>
-        <button name="category" value="Fitness" class="form-control">Fitness</button>
-        <button name="category" value="miscellaneous" class="form-control">miscellaneous</button>
-    </form>
+    
 
 
 

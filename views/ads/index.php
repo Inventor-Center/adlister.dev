@@ -7,7 +7,8 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">All Users Ads</h1>
+                <h1 class="text-center">Your Active Ads</h1>
+                <hr>
 
             </div>
 
@@ -19,8 +20,7 @@
 
         <div class="row">
 
-            <h3 class="section-title">Your Ads</h3>
-
+           
                 <?php foreach($allUsersAds as $ad) : ?>
                 <?php $imgArray = explode(",",$ad->img); ?>
                 <a href="/Ads/Show?id=<?= $ad->id ?>">
