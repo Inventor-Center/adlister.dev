@@ -49,10 +49,14 @@ select {
 }
 
 .imgContainer img {
-	max-height: 60%;
+	max-height: 12em;
 	max-width: 90%;
 	margin-bottom:2em;
 	border-radius: .5em;
+}
+
+#signupSpacer{
+	margin-top:5%;
 }
 
 #singleAdCentering {
@@ -61,23 +65,25 @@ select {
 }
 
 .imgContainerShow img {
-	max-height: 40%;
-	width: 25%;
+	max-height: 10em;
+	max-width: 25%;
 	margin-bottom:2em;
 	border-radius: .5em;
 	float:left;
 }
+tDivider1{width:48%;float:left;}
+tDivider2{width:48%;float:left;}
 
 .imgContainer {
-	width:29%;
-	margin-left: 2.1%;
-	margin-right: 2.1%;
+	width:48%;
+	margin-left: 1.2;
+	margin-right: 1.2%;
 	border:1px solid black;
 	border-radius: 1em;
 	float:left;
 	text-align:center;
 	background-color:rgba(255,255,255,.15);
-	height:36em;
+	height:29em;
 	margin-bottom:1em;
 	padding-left: .6em;
 	padding-right:.6em;
@@ -103,6 +109,13 @@ select {
 	color:white;
 }
 
+.categoryButtons:hover {
+	background-color:rgba(255,255,255,.15);
+}
+
+#miscButton{
+	margin-bottom: 5em;
+}
 #entBut {
 	margin-top:5em;
 }
