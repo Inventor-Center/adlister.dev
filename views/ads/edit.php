@@ -1,13 +1,39 @@
 <!--Page that includes the form to edit an existing ad-->
 <?php 
-	if(isset($_POST['guesswhat'])){
-		$newAd = new USER;
+	$currentAd = MODEL::findAdById((int)$_GET['id']); 
+	if(isset($_POST['guesswhat']) && ($currentAd['username'] == $_SESSION['IS_LOGGED_IN'])){
+		$newAd = new AD;
 		$newAd->id = (int)$_GET['id'];
-		$newAd->title = $_SESSION['title_edit']; 
-		$newAd->description	= $_SESSION['description_edit'];
-		$newAd->img = $_SESSION['img_edit'];
-		$newAd->categories = $_SESSION['catagories_edit'];
+		if(isset($_SESSION['title_edit'])){
+			$newAd->title = $_SESSION['title_edit'];
+			unset($_SESSION['title_edit']); 
+		}
+		else{
+			$newAd->title = $currentAd['title'];
+		}
+		if(isset($_SESSION['description_edit'])){
+			$newAd->description	= $_SESSION['description_edit'];
+			unset($_SESSION['description_edit']); 
+		}
+		else{
+			$newAd->description = $currentAd['description'];
+		}
+		if(isset($_SESSION['img_edit'])){
+			$newAd->img = $_SESSION['img_edit'];
+			unset($_SESSION['img_edit']); 
+		}
+		else{
+			$newAd->img = $currentAd['img'];
+		}
+		if(isset($_SESSION['catagories_edit'])){
+			$newAd->categories = $_SESSION['catagories_edit'];
+			unset($_SESSION['catagories_edit']); 
+		}
+		else{
+			$newAd->categories = $currentAd['categories'];
+		}
 		$newAd->save();
+		header("Location:/Ads/Show?id=$newAd->id");
 	} 
 	else if(isset($_POST['title'])){
 		$_SESSION['title_edit'] = $_POST['title'];
@@ -21,18 +47,15 @@
 	else if(isset($_POST['categories'])){
 		$_SESSION['catagories_edit'] = $_POST['categories'];
 	} 
-		var_dump($_SESSION);
+		
 		?>
 
 <h1>this is the edit item page</h1>
 
 <div id="formWrapper" class="col-md-4">
 	<form method="POST" >
-<?php $currentAd = MODEL::findAdById((int)$_GET['id']); 
-?>
-					<?php if (!isset($_POST['submitted'])) { ?> 
-                    <h5><?php 
-                    if(isset($_SESSION['title_edit'])){
+		<?php if (!isset($_POST['submitted'])) { ?> 
+            <h5><?php if(isset($_SESSION['title_edit'])){
                 		$display = $_SESSION['title_edit'];
                 	}
                 	else{

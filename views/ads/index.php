@@ -7,7 +7,13 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Your Active Ads</h1>
+                <h1 class="text-center"> <?php if(empty($allUsersAds)){
+                    echo "No Ads";
+                }
+                else{
+                    echo "Your Active Ads";
+                    }; ?> </h1>
+                
                 <hr>
 
             </div>
@@ -20,7 +26,6 @@
 
         <div class="row">
 
-           
                 <?php foreach($allUsersAds as $ad) : ?>
                 <?php $imgArray = explode(",",$ad->img); ?>
                 <a href="/Ads/Show?id=<?= $ad->id ?>">
