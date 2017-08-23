@@ -2,7 +2,7 @@
 
     <section id="login">
 
-        <div class="row">
+        <div class="row" id="loginContainer">
 
             <h1 class="section-title">Login To Inventor Center</h1>
 

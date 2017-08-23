@@ -95,6 +95,18 @@ select {
 	padding-right:.6em;
 }
 
+#loginContainer {
+	margin-top:10%;
+}
+.categoryButtons {
+	background-color:rgba(0,0,0,0);
+	color:white;
+}
+
+#entBut {
+	margin-top:5em;
+}
+
 a:link,a:active,a:visited {
 	color:white;
 }
@@ -110,7 +122,7 @@ a:hover{
 hr {
 	margin-top:0;
 	color:black;
-	width:80%;
+	width:70%;
 }
 
 h1 {

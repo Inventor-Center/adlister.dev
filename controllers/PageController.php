@@ -56,7 +56,6 @@ function updateUser(){
     $loggedInUserId = $_SESSION['LOGGED_IN_ID'];
     $newUsername = Input::get('editUsername');
     $query = "UPDATE users SET username = '{$newUsername}' WHERE id = '{$loggedInUserId}'";
-    var_dump($query);
     $firstValue = true;
 
     $stmt = $dbc->prepare($query);
@@ -74,7 +73,6 @@ function pageController()
 
     if (isset($_GET['category'])){
         $category = Input::get('category');
-        var_dump($category);
         $allAds = Ad::filterByCategory($category);
     } else {
         $allAds = Ad::all();
@@ -91,15 +89,12 @@ function pageController()
         $data['activeUser'] = $activeUser;
         $data['activeInfo'] = $activeInfo;   
     }
-    if(isset($_GET['delete'])) {
 
+    if(isset($_GET['delete'])) {
         $ad = new Ad;
         $ad->id = Input::get('id');
         $ad->delete();
     }
-
-//test update
-
 
     if(Input::has('logout')){
         Auth::logout();
@@ -122,7 +117,6 @@ function pageController()
         };
     }
 
-    //defining all users and ads in db
     if(($request == "/Users/Login" || $request == "/Users/Signup") && isset($_SESSION['IS_LOGGED_IN'])){
         $request = "/Ads";
     }
@@ -131,6 +125,8 @@ function pageController()
         $request = "/Users/Login";
     }
     // switch that will run functions and setup variables dependent on what route was accessed
+
+    function pageContentController(){}
     switch ($request) {
         case '/':
             $mainView = '../views/home.php';
